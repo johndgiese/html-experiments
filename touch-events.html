@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <div id="parent">
+      <div id="child">
+      </div>
+    </div>
+    <style>
+      #parent, #child {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      const elementIds = [
+        "parent",
+        "child",
+      ];
+      const events = [
+        "touchstart",
+        //"touchmove",
+        "touchend",
+        //"mousemove",
+        "mousedown",
+        "mouseup",
+        "mouseleave",
+        "click",
+        "orientationchange",
+      ];
+      elementIds.forEach(elementId => {
+        const element = document.getElementById(elementId);
+        events.forEach(event => {
+          element.addEventListener(event, () => console.log(event + " " + elementId));
+        });
+      });
+    </script>
+  </body>
+</html>
